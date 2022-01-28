@@ -1,0 +1,762 @@
+{
+  "11": [
+    {
+      "shop": "Икеа",
+      "buy_prod": 5,
+      "purchase": 1,
+      "data": "Sat Dec 22 2021 00:00:00 GMT+0300 (Москва, стандартное время)"
+    }
+  ],
+  "15": [
+    {
+      "shop": "IKEA",
+      "buy_prod": 32,
+      "purchase": 0,
+      "data": "Sat Dec 23 2021 00:00:00 GMT+0300 (Москва, стандартное время)"
+    }
+  ],
+  "16": [
+    {
+      "shop": "Пятерочка",
+      "buy_prod": 5,
+      "purchase": 1,
+      "data": "Sat Dec 21 2021 00:00:00 GMT+0300 (Москва, стандартное время)"
+    }
+  ],
+  "20": [
+    {
+      "shop": "Пятерочка",
+      "buy_prod": 12,
+      "purchase": 6,
+      "data": "Sat Dec 22 2021 00:00:00 GMT+0300 (Москва, стандартное время)"
+    }
+  ],
+  "23": [
+    {
+      "shop": "Пятерочка",
+      "buy_prod": 20,
+      "purchase": 10,
+      "data": "Sat Dec 23 2021 00:00:00 GMT+0300 (Москва, стандартное время)"
+    }
+  ],
+  "24": [
+    {
+      "shop": "Пятерочка",
+      "buy_prod": 12,
+      "purchase": 6,
+      "data": "Sat Dec 24 2021 00:00:00 GMT+0300 (Москва, стандартное время)"
+    }
+  ],
+  "users": [
+    {
+      "email": "admin@mail.com",
+      "password": "$2a$10$wXpqbSGznfO8Oz/pFat2KejW6T9U1O1hWLQLOjez957MQWL9bO2gC",
+      "user_name": "admin",
+      "id": 1
+    },
+    {
+      "email": "admin15@mail.com",
+      "password": "$2a$10$vzCZeryZvXwkFfVFVu8bLO1kEc4vj3Ub7tf/03IdOKoG/P4I.ucKK",
+      "user_name": "odmin",
+      "id": 2
+    },
+    {
+      "email": "admin08@mail.ru",
+      "password": "$2a$10$kf7LbyBfe6j0YrjaDSogCuX1aJTZ7/bP9SZZYxkAALCPJ/uKqQqZm",
+      "username": "admin080122",
+      "confirmPassword": "admin080122",
+      "firstname": "administrator",
+      "lastname": "ministrator",
+      "id": 3
+    },
+    {
+      "email": "dart@weider.bl",
+      "password": "$2a$10$xKPKSOJRABQfX5gizFXCnetZloApGs./WXWbdyrkuDH6tVBXhKvJ.",
+      "user_name": "dartweider",
+      "confirmPassword": "blackstar",
+      "firstname": "dart",
+      "lastname": "weider",
+      "id": 4
+    }
+  ],
+  "example": [
+    {
+      "shop": "IKEA",
+      "qty_lists": "2",
+      "list": [
+        {
+          "day": "Tue Jan 11 2022 00:00:00 GMT+0300 (Москва, стандартное время)",
+          "name_list": "table",
+          "buy_prod": "5",
+          "purchase": "1",
+          "list_prod": [
+            "one table",
+            "two table",
+            "three table",
+            "four table",
+            "five table"
+          ]
+        },
+        {
+          "day": "Sat Jan 15 2022 00:00:00 GMT+0300 (Москва, стандартное время)",
+          "name_list": "kitchen",
+          "buy_prod": "6",
+          "purchase": "0",
+          "list_prod": [
+            "one kitchen",
+            "two kitchen",
+            "three kitchen",
+            "four kitchen",
+            "five kitchen",
+            "six kitchen"
+          ]
+        }
+      ]
+    },
+    {
+      "shop": "Pyaterochka",
+      "qty_lists": "4",
+      "list": [
+        {
+          "day": "Sun Jan 16 2022 00:00:00 GMT+0300 (Москва, стандартное время)",
+          "name_list": "for drink",
+          "buy_prod": "5",
+          "purchase": "1",
+          "list_prod": [
+            "one vodka",
+            "two vodki",
+            "three vodkov",
+            "four vodka",
+            "five vodkov"
+          ]
+        },
+        {
+          "day": "Thu Jan 20 2022 00:00:00 GMT+0300 (Москва, стандартное время)",
+          "name_list": "for hangover",
+          "buy_prod": "12",
+          "purchase": "6",
+          "list_prod": [
+            "one beer",
+            "two pivo",
+            "three pivka",
+            "four pivusik",
+            "five pivasik",
+            "six poltorashka",
+            "seven beer",
+            "eight beer",
+            "nine beer",
+            "ten vodka",
+            "ten one vodka",
+            "ten two vodka"
+          ]
+        },
+        {
+          "day": "Sun Jan 23 2022 00:00:00 GMT+0300 (Москва, стандартное время)",
+          "name_list": "for long drink",
+          "buy_prod": "10",
+          "purchase": "10",
+          "list_prod": [
+            "one vodka",
+            "two vodka",
+            "three vodka",
+            "four vodka",
+            "five vodka",
+            "six vodka",
+            "seven viskarik",
+            "eight viskarik",
+            "nine viskarik",
+            "ten vodka"
+          ]
+        },
+        {
+          "day": "Mon Jan 24 2022 00:00:00 GMT+0300 (Москва, стандартное время)",
+          "name_list": "kefir",
+          "buy_prod": "12",
+          "purchase": "6",
+          "list_prod": [
+            "one kkefir",
+            "two kefir",
+            "three kefir",
+            "four kefir",
+            "five kefir",
+            "six kefir",
+            "seven supchik",
+            "eight supchik",
+            "nine supchik",
+            "ten vodka",
+            "ten one vodka",
+            "ten two vodka"
+          ]
+        }
+      ]
+    }
+  ],
+  "orders": [
+    {
+      "id": 0,
+      "day": "Fri Dec 22 2021 00:00:00 GMT+0300 (Москва, стандартное время)",
+      "shop": "IKEA",
+      "shop_id": 1,
+      "category_id": 4,
+      "category_name": "furniture",
+      "order_id": 0,
+      "name": "one table",
+      "is_success": true
+    },
+    {
+      "id": 1,
+      "day": "Fri Dec 22 2021 00:00:00 GMT+0300 (Москва, стандартное время)",
+      "shop": "IKEA",
+      "shop_id": 1,
+      "category_id": 4,
+      "category_name": "furniture",
+      "order_id": 0,
+      "name": "two table",
+      "is_success": false
+    },
+    {
+      "id": 7,
+      "day": "Fri Dec 22 2021 00:00:00 GMT+0300 (Москва, стандартное время)",
+      "shop": "IKEA",
+      "shop_id": 1,
+      "category_id": 4,
+      "category_name": "furniture",
+      "order_id": 0,
+      "name": "three table",
+      "is_success": false
+    },
+    {
+      "id": 8,
+      "day": "Fri Dec 22 2021 00:00:00 GMT+0300 (Москва, стандартное время)",
+      "shop": "IKEA",
+      "shop_id": 1,
+      "category_id": 4,
+      "category_name": "furniture",
+      "order_id": 0,
+      "name": "four table",
+      "is_success": false
+    },
+    {
+      "id": 2,
+      "day": "Fri Dec 23 2021 00:00:00 GMT+0300 (Москва, стандартное время)",
+      "shop": "IKEA",
+      "shop_id": 1,
+      "category_id": 1,
+      "category_name": "fruits",
+      "order_id": 1,
+      "name": "banana 2",
+      "is_success": false
+    },
+    {
+      "id": 3,
+      "day": "Fri Dec 23 2021 00:00:00 GMT+0300 (Москва, стандартное время)",
+      "shop": "IKEA",
+      "shop_id": 1,
+      "category_id": 1,
+      "category_name": "fruits",
+      "order_id": 1,
+      "name": "apple 2",
+      "is_success": true
+    },
+    {
+      "id": 4,
+      "day": "Fri Dec 22 2021 00:00:00 GMT+0300 (Москва, стандартное время)",
+      "shop": "Pyaterochka",
+      "shop_id": 2,
+      "category_id": 1,
+      "category_name": "fruits",
+      "order_id": 0,
+      "name": "banana 1",
+      "is_success": false
+    },
+    {
+      "id": 5,
+      "day": "Fri Dec 22 2021 00:00:00 GMT+0300 (Москва, стандартное время)",
+      "shop": "Pyaterochka",
+      "shop_id": 2,
+      "category_id": 1,
+      "category_name": "fruits",
+      "order_id": 1,
+      "name": "apple 2",
+      "is_success": false
+    },
+    {
+      "day": "Fri Dec 22 2021 00:00:00 GMT+0300 (Москва, стандартное время)",
+      "shop": "IKEA",
+      "shop_id": 1,
+      "category_id": 4,
+      "category_name": "furniture",
+      "order_id": 0,
+      "name": "four table",
+      "is_success": false,
+      "id": 6
+    },
+    {
+      "name": "vodka",
+      "category_id": 5,
+      "shop": "IKEA",
+      "shop_id": 0,
+      "day": "Wed Dec 22 2021 00:00:00 GMT+0300 (Москва, стандартное время)",
+      "order_id": 5,
+      "is_success": false,
+      "id": 9
+    },
+    {
+      "name": "beer",
+      "category_id": 5,
+      "shop": "IKEA",
+      "shop_id": 0,
+      "day": "Wed Dec 22 2021 00:00:00 GMT+0300 (Москва, стандартное время)",
+      "order_id": 0,
+      "is_success": false,
+      "id": 10
+    },
+    {
+      "name": "vodka",
+      "category_id": 5,
+      "shop": "IKEA",
+      "shop_id": 1,
+      "day": "Thu Dec 23 2021 00:00:00 GMT+0300 (Москва, стандартное время)",
+      "order_id": 1,
+      "is_success": false,
+      "id": 11
+    },
+    {
+      "name": "vodka",
+      "category_id": 5,
+      "shop": "Pyaterochka",
+      "shop_id": 0,
+      "day": "Tue Dec 21 2021 00:00:00 GMT+0300 (Москва, стандартное время)",
+      "order_id": 0,
+      "is_success": false,
+      "id": 12
+    },
+    {
+      "name": "beer",
+      "category_id": 5,
+      "shop": "Pyaterochka",
+      "shop_id": "0",
+      "day": "Tue Dec 21 2021 00:00:00 GMT+0300 (Москва, стандартное время)",
+      "order_id": "0",
+      "is_success": false,
+      "id": 13
+    },
+    {
+      "name": "стул",
+      "category_id": 4,
+      "shop": "IKEA",
+      "shop_id": "1",
+      "day": "Thu Dec 23 2021 00:00:00 GMT+0300 (Москва, стандартное время)",
+      "order_id": "1",
+      "is_success": false,
+      "id": 14
+    },
+    {
+      "name": "картошка",
+      "category_id": 2,
+      "shop": "Pyaterochka",
+      "shop_id": 0,
+      "day": "Tue Dec 21 2021 00:00:00 GMT+0300 (Москва, стандартное время)",
+      "order_id": 0,
+      "is_success": false,
+      "id": 15
+    },
+    {
+      "name": "яблоко",
+      "category_id": 1,
+      "shop": "Pyaterochka",
+      "shop_id": 3,
+      "day": "Fri Dec 24 2021 00:00:00 GMT+0300 (Москва, стандартное время)",
+      "order_id": 3,
+      "is_success": false,
+      "id": 16
+    },
+    {
+      "name": "banana",
+      "category_id": 1,
+      "shop": "Pyaterochka",
+      "shop_id": "3",
+      "day": "Fri Dec 24 2021 00:00:00 GMT+0300 (Москва, стандартное время)",
+      "order_id": "3",
+      "is_success": false,
+      "id": 17
+    },
+    {
+      "name": "помидор",
+      "category_id": 2,
+      "shop": "Pyaterochka",
+      "shop_id": "3",
+      "day": "Fri Dec 24 2021 00:00:00 GMT+0300 (Москва, стандартное время)",
+      "order_id": "3",
+      "is_success": false,
+      "id": 19
+    },
+    {
+      "name": "картошка",
+      "category_id": 2,
+      "shop": "Pyaterochka",
+      "shop_id": "3",
+      "day": "Fri Dec 24 2021 00:00:00 GMT+0300 (Москва, стандартное время)",
+      "order_id": "3",
+      "is_success": false,
+      "id": 20
+    },
+    {
+      "name": "vodka",
+      "category_id": 5,
+      "shop": "Pyaterochka",
+      "shop_id": "3",
+      "day": "Fri Dec 24 2021 00:00:00 GMT+0300 (Москва, стандартное время)",
+      "order_id": "3",
+      "is_success": false,
+      "id": 21
+    },
+    {
+      "name": "null",
+      "category_id": 5,
+      "shop": "Pyaterochka",
+      "shop_id": "3",
+      "day": "Fri Dec 24 2021 00:00:00 GMT+0300 (Москва, стандартное время)",
+      "order_id": "3",
+      "is_success": false,
+      "id": 22
+    },
+    {
+      "name": "mango",
+      "category_id": 1,
+      "category_name": "фрукты",
+      "shop": "Pyaterochka",
+      "shop_id": "1",
+      "day": "Wed Dec 22 2021 00:00:00 GMT+0300 (Москва, стандартное время)",
+      "order_id": "1",
+      "is_success": false,
+      "id": 23
+    },
+    {
+      "name": "капуста",
+      "category_id": 2,
+      "category_name": "овощи",
+      "shop": "Pyaterochka",
+      "shop_id": 2,
+      "day": "Thu Dec 23 2021 00:00:00 GMT+0300 (Москва, стандартное время)",
+      "order_id": 2,
+      "is_success": false,
+      "id": 24
+    },
+    {
+      "name": "диван",
+      "category_id": 8,
+      "category_name": "дом",
+      "shop": "IKEA",
+      "shop_id": "1",
+      "day": "Thu Dec 23 2021 00:00:00 GMT+0300 (Москва, стандартное время)",
+      "order_id": "1",
+      "is_success": false,
+      "id": 25
+    },
+    {
+      "name": "стол",
+      "category_id": 4,
+      "shop": "IKEA",
+      "shop_id": "1",
+      "day": "Sat Jan 15 2022 00:00:00 GMT+0300 (Москва, стандартное время)",
+      "order_id": "1",
+      "is_success": false,
+      "id": 26
+    },
+    {
+      "name": "яблоко",
+      "category_id": 1,
+      "shop": "Pyaterochka",
+      "shop_id": "1",
+      "day": "Thu Jan 20 2022 00:00:00 GMT+0300 (Москва, стандартное время)",
+      "order_id": "1",
+      "is_success": false,
+      "id": 27
+    },
+    {
+      "name": "mango",
+      "category_id": 1,
+      "category_name": "фрукты",
+      "shop": "Pyaterochka",
+      "shop_id": "1",
+      "day": "Thu Jan 20 2022 00:00:00 GMT+0300 (Москва, стандартное время)",
+      "order_id": "1",
+      "is_success": false,
+      "id": 28
+    },
+    {
+      "name": "mango",
+      "category_id": 1,
+      "category_name": "фрукты",
+      "shop": "IKEA",
+      "shop_id": 0,
+      "day": "Tue Jan 11 2022 00:00:00 GMT+0300 (Москва, стандартное время)",
+      "order_id": 0,
+      "is_success": false,
+      "id": 29
+    },
+    {
+      "name": "banana",
+      "category_id": 1,
+      "shop": "IKEA",
+      "shop_id": 0,
+      "day": "Tue Jan 11 2022 00:00:00 GMT+0300 (Москва, стандартное время)",
+      "order_id": 0,
+      "is_success": false,
+      "id": 30
+    }
+  ],
+  "shops": [
+    {
+      "id": 1,
+      "user_id": 2,
+      "shop_name": "IKEA"
+    },
+    {
+      "id": 8,
+      "user_id": 4,
+      "shop_name": "IKEA"
+    },
+    {
+      "id": 2,
+      "user_id": 1,
+      "shop_name": "Pyaterochka"
+    },
+    {
+      "id": 9,
+      "user_id": 2,
+      "shop_name": "Pyaterochka"
+    },
+    {
+      "id": 10,
+      "user_id": 3,
+      "shop_name": "Pyaterochka"
+    },
+    {
+      "id": 11,
+      "user_id": 4,
+      "shop_name": "Pyaterochka"
+    },
+    {
+      "id": 3,
+      "user_id": 1,
+      "shop_name": "Без магазина"
+    },
+    {
+      "id": 12,
+      "user_id": 2,
+      "shop_name": "Без магазина"
+    },
+    {
+      "id": 13,
+      "user_id": 3,
+      "shop_name": "Без магазина"
+    },
+    {
+      "id": 14,
+      "user_id": 4,
+      "shop_name": "Без магазина"
+    },
+    {
+      "shop_name": "магнит",
+      "user_id": 4,
+      "id": 4
+    },
+    {
+      "shop_name": "Ашан",
+      "user_id": 4,
+      "id": 5
+    },
+    {
+      "shop_name": "Globus",
+      "user_id": 4,
+      "id": 6
+    },
+    {
+      "shop_name": "Lenta",
+      "user_id": 4,
+      "id": 7
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "user_id": 4,
+      "name_category": "фрукты"
+    },
+    {
+      "id": 2,
+      "user_id": 4,
+      "name_category": "овощи"
+    },
+    {
+      "id": 3,
+      "user_id": 2,
+      "name_category": "одежда"
+    },
+    {
+      "id": 4,
+      "user_id": 2,
+      "name_category": "мебель"
+    },
+    {
+      "id": 0,
+      "user_id": 4,
+      "name_category": "Без категории"
+    },
+    {
+      "name_category": "home",
+      "user_id": 2,
+      "id": 5
+    },
+    {
+      "name_category": "auto",
+      "user_id": 4,
+      "id": 6
+    },
+    {
+      "name_category": "electric",
+      "user_id": 4,
+      "id": 7
+    },
+    {
+      "name_category": "alcogol",
+      "user_id": 4,
+      "id": 8
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "category_id": 4,
+      "product_name": "стол"
+    },
+    {
+      "id": 6,
+      "category_id": 4,
+      "product_name": "диван"
+    },
+    {
+      "id": 7,
+      "category_id": 4,
+      "product_name": "стул"
+    },
+    {
+      "id": 2,
+      "category_id": 2,
+      "user_id": 4,
+      "product_name": "помидор"
+    },
+    {
+      "id": 8,
+      "category_id": 2,
+      "user_id": 4,
+      "product_name": "картошка"
+    },
+    {
+      "id": 3,
+      "category_id": 1,
+      "user_id": 4,
+      "product_name": "banana"
+    },
+    {
+      "id": 9,
+      "category_id": 1,
+      "user_id": 4,
+      "product_name": "яблоко"
+    },
+    {
+      "id": 4,
+      "category_id": 5,
+      "user_id": 4,
+      "product_name": "vodka"
+    },
+    {
+      "id": 5,
+      "category_id": 5,
+      "user_id": 4,
+      "product_name": "beer"
+    }
+  ],
+  "lists": [
+    {
+      "id": 1,
+      "list_name": "dinner",
+      "shop_id": 2,
+      "user_id": 4,
+      "created_at": "Tue Dec 21 2021 00:00:00 GMT+0300 (Москва, стандартное время)"
+    },
+    {
+      "id": 8,
+      "list_name": "dinner",
+      "shop_id": 2,
+      "user_id": 2,
+      "created_at": "Tue Dec 21 2021 00:00:00 GMT+0300 (Москва, стандартное время)"
+    },
+    {
+      "id": 2,
+      "list_name": "dinner",
+      "shop_id": 2,
+      "user_id": 4,
+      "created_at": "Tue Dec 22 2021 00:00:00 GMT+0300 (Москва, стандартное время)"
+    },
+    {
+      "id": 3,
+      "list_name": "home",
+      "shop_id": 1,
+      "user_id": 4,
+      "created_at": "Tue Dec 21 2021 00:00:00 GMT+0300 (Москва, стандартное время)"
+    },
+    {
+      "list_name": "dinner",
+      "shop_id": 2,
+      "user_id": 4,
+      "created_at": "2022-01-13T00:00:00.000Z",
+      "id": 4
+    },
+    {
+      "list_name": "piknik",
+      "shop_id": 7,
+      "user_id": 4,
+      "created_at": "2022-01-15T00:00:00.000Z",
+      "id": 5
+    },
+    {
+      "list_name": "happy",
+      "shop_id": 6,
+      "user_id": 4,
+      "created_at": "2022-01-14T00:00:00.000Z",
+      "id": 6
+    },
+    {
+      "list_name": "happy",
+      "shop_id": 1,
+      "user_id": 2,
+      "created_at": "2022-01-14T00:00:00.000Z",
+      "id": 7
+    }
+  ],
+  "orderItem": [
+    {
+      "name_product": "mango",
+      "category_id": 1,
+      "shop_id": 1,
+      "day": "Tue Jan 11 2022 00:00:00 GMT+0300 (Москва, стандартное время)",
+      "list_id": 7,
+      "is_success": false,
+      "user_id": 2,
+      "id": 1
+    },
+    {
+      "name_product": "product",
+      "category_id": 1,
+      "shop_id": 2,
+      "day": "Tue Jan 11 2022 00:00:00 GMT+0300 (Москва, стандартное время)",
+      "list_id": 8,
+      "is_success": false,
+      "user_id": 2,
+      "id": 2
+    }
+  ]
+}

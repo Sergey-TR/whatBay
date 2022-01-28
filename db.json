@@ -1,0 +1,415 @@
+{
+  "users": [
+    {
+      "email": "dart@weider.bl",
+      "password": "$2a$10$HvdavpoZSzlrY3aqZxdOjuRaywJHmEnq12RTcwaoBbgT8NODnUyym",
+      "user_name": "dartweider",
+      "confirmPassword": "blackstar",
+      "firstname": "dart",
+      "lastname": "weider",
+      "id": 1
+    },
+    {
+      "email": "admin15@mail.com",
+      "password": "$2a$10$Gd0ncXtuTWM206fV88owH.2qTAmJrg4QCuCi52l.g4ZQoZtd5njBC",
+      "user_name": "admin",
+      "confirmPassword": "admin15",
+      "firstname": "administrator",
+      "lastname": "ministrator",
+      "id": 2
+    },
+    {
+      "email": "ts@mail.com",
+      "password": "$2a$10$T3R4wDt9.gBlPlVjP5FZoOi3WdXfau1xHDpoz6GC3MSriv66.TXOa",
+      "user_name": "tsv",
+      "confirmPassword": "abramov",
+      "firstname": "abram",
+      "lastname": "abramov",
+      "id": 3
+    },
+    {
+      "email": "test@reg.ru",
+      "password": "$2a$10$ug0UyflsidQCDUKlTjooAuSEHRP5KKoXhm06mt6fhcUoG9ITbny3i",
+      "user_name": "admin",
+      "confirmPassword": "123456",
+      "firstname": "dart",
+      "lastname": "weider",
+      "id": 4
+    },
+    {
+      "email": "yoda@jd.ay",
+      "password": "$2a$10$bC9QNG3vlg2QME3/bZlbvO/l4S.Cb2laGUOY0X4Urlwc4vAXumxHq",
+      "user_name": "yoda",
+      "confirmPassword": "master",
+      "firstname": "yoda",
+      "lastname": "jday",
+      "id": 5
+    }
+  ],
+  "shops": [
+    {
+      "shop_name": "Без магазина",
+      "id": 0
+    },
+    {
+      "shop_name": "Ikea",
+      "user_id": 1,
+      "id": 1
+    },
+    {
+      "shop_name": "Lenta",
+      "user_id": 1,
+      "id": 2
+    },
+    {
+      "shop_name": "OBI",
+      "user_id": 1,
+      "id": 3
+    },
+    {
+      "shop_name": "Lerua",
+      "user_id": 2,
+      "id": 4
+    },
+    {
+      "shop_name": "Пятерочка",
+      "user_id": 3,
+      "id": 5
+    },
+    {
+      "shop_name": "metro",
+      "user_id": 3,
+      "id": 6
+    }
+  ],
+  "lists": [
+    {
+      "list_name": "home",
+      "shop_id": 1,
+      "created_at": "2022-01-17T00:00:00.000Z",
+      "user_id": 1,
+      "id": 1
+    },
+    {
+      "list_name": "dinner",
+      "shop_id": 2,
+      "created_at": "2022-01-18T00:00:00.000Z",
+      "user_id": 1,
+      "id": 2
+    },
+    {
+      "list_name": "happy",
+      "shop_id": 2,
+      "created_at": "2022-01-18T00:00:00.000Z",
+      "user_id": 1,
+      "id": 3
+    },
+    {
+      "list_name": "ремонт",
+      "shop_id": 3,
+      "created_at": "2022-01-20T00:00:00.000Z",
+      "user_id": 1,
+      "id": 4
+    },
+    {
+      "list_name": "для дачи",
+      "shop_id": 3,
+      "created_at": "2022-01-21T00:00:00.000Z",
+      "user_id": 1,
+      "id": 5
+    },
+    {
+      "list_name": "для дачи",
+      "shop_id": 3,
+      "created_at": "2022-01-25T00:00:00.000Z",
+      "user_id": 1,
+      "id": 6
+    },
+    {
+      "list_name": "шашлык",
+      "shop_id": 2,
+      "created_at": "2022-01-22T00:00:00.000Z",
+      "user_id": 1,
+      "id": 7
+    },
+    {
+      "list_name": "для спальни",
+      "shop_id": 1,
+      "created_at": "2022-01-29T00:00:00.000Z",
+      "user_id": 1,
+      "id": 8
+    },
+    {
+      "list_name": "аксессуары",
+      "shop_id": 1,
+      "created_at": "2022-01-29T00:00:00.000Z",
+      "user_id": 1,
+      "id": 9
+    },
+    {
+      "list_name": "eda",
+      "shop_id": 5,
+      "created_at": "2022-01-25T00:00:00.000Z",
+      "user_id": 3,
+      "id": 10
+    }
+  ],
+  "categories": [
+    {
+      "category_name": "Без Категории",
+      "user_id": 1,
+      "id": 0
+    },
+    {
+      "category_name": "kitchen",
+      "user_id": 1,
+      "id": 1
+    },
+    {
+      "category_name": "room",
+      "user_id": 1,
+      "id": 2
+    },
+    {
+      "category_name": "fruits",
+      "user_id": 1,
+      "id": 3
+    },
+    {
+      "category_name": "vegetables",
+      "user_id": 1,
+      "id": 4
+    },
+    {
+      "category_name": "метизы",
+      "user_id": 1,
+      "id": 5
+    },
+    {
+      "category_name": "краска",
+      "user_id": 1,
+      "id": 6
+    },
+    {
+      "category_name": "light",
+      "user_id": 1,
+      "id": 7
+    },
+    {
+      "category_name": "picnik",
+      "user_id": 1,
+      "id": 8
+    },
+    {
+      "category_name": "alko",
+      "user_id": 1,
+      "id": 9
+    },
+    {
+      "category_name": "пиломатериалы",
+      "user_id": 1,
+      "id": 10
+    },
+    {
+      "category_name": "meat",
+      "user_id": 3,
+      "id": 11
+    }
+  ],
+  "products": [
+    {
+      "product_name": "apple",
+      "category_id": 3,
+      "user_id": 1,
+      "id": 1
+    },
+    {
+      "product_name": "banana",
+      "category_id": 3,
+      "user_id": 1,
+      "id": 2
+    },
+    {
+      "product_name": "половник",
+      "category_id": 1,
+      "user_id": 1,
+      "id": 3
+    },
+    {
+      "product_name": "тарелка",
+      "category_id": 1,
+      "user_id": 1,
+      "id": 4
+    },
+    {
+      "product_name": "подушка",
+      "category_id": 2,
+      "user_id": 1,
+      "id": 5
+    },
+    {
+      "product_name": "стул",
+      "category_id": 2,
+      "user_id": 1,
+      "id": 6
+    },
+    {
+      "product_name": "помидор",
+      "category_id": 4,
+      "user_id": 1,
+      "id": 7
+    },
+    {
+      "product_name": "картошка",
+      "category_id": 4,
+      "user_id": 1,
+      "id": 8
+    },
+    {
+      "product_name": "саморез",
+      "category_id": 5,
+      "user_id": 1,
+      "id": 9
+    },
+    {
+      "product_name": "болт",
+      "category_id": 5,
+      "user_id": 1,
+      "id": 10
+    },
+    {
+      "product_name": "валик",
+      "category_id": 6,
+      "user_id": 1,
+      "id": 11
+    },
+    {
+      "product_name": "кисть",
+      "category_id": 6,
+      "user_id": 1,
+      "id": 12
+    },
+    {
+      "product_name": "mango",
+      "category_id": 3,
+      "user_id": 1,
+      "id": 13
+    },
+    {
+      "product_name": "для стен белая",
+      "category_id": 6,
+      "user_id": 1,
+      "id": 14
+    },
+    {
+      "product_name": "ложки",
+      "category_id": 1,
+      "user_id": 1,
+      "id": 15
+    },
+    {
+      "product_name": "доска 100х25х6000",
+      "category_id": 10,
+      "user_id": 1,
+      "id": 17
+    },
+    {
+      "product_name": "meat cow",
+      "category_id": 11,
+      "user_id": 3,
+      "id": 18
+    }
+  ],
+  "orders": [
+    {
+      "product_name": "для стен белая",
+      "category_id": 6,
+      "category_name": "краска",
+      "shop_name": "OBI",
+      "shop_id": 3,
+      "day": "2022-01-25T00:00:00.000Z",
+      "order_id": 3,
+      "list_id": 6,
+      "is_success": true,
+      "user_id": 1,
+      "id": 1
+    },
+    {
+      "product_name": "для стен красная",
+      "category_id": 6,
+      "category_name": "краска",
+      "shop_name": "OBI",
+      "shop_id": 3,
+      "day": "2022-01-21T00:00:00.000Z",
+      "order_id": 3,
+      "list_id": 5,
+      "is_success": false,
+      "user_id": 1,
+      "id": 2
+    },
+    {
+      "product_name": "для стен синяя",
+      "category_id": 6,
+      "category_name": "краска",
+      "shop_name": "OBI",
+      "shop_id": 3,
+      "day": "2022-01-25T00:00:00.000Z",
+      "order_id": 3,
+      "list_id": 6,
+      "is_success": false,
+      "user_id": 1,
+      "id": 3
+    },
+    {
+      "product_name": "ложки",
+      "category_id": 1,
+      "category_name": "kitchen",
+      "shop_name": "Ikea",
+      "shop_id": 1,
+      "day": "2022-01-17T00:00:00.000Z",
+      "order_id": 1,
+      "is_success": false,
+      "user_id": 1,
+      "list_id": 1,
+      "id": 4
+    },
+    {
+      "product_name": "половник",
+      "category_id": 1,
+      "shop_name": "Ikea",
+      "shop_id": 1,
+      "day": "2022-01-17T00:00:00.000Z",
+      "order_id": 1,
+      "is_success": false,
+      "user_id": 1,
+      "list_id": 1,
+      "id": 5
+    },
+    {
+      "product_name": "доска 100х25х6000",
+      "category_id": 10,
+      "category_name": "пиломатериалы",
+      "shop_name": "OBI",
+      "shop_id": 3,
+      "day": "2022-01-20T00:00:00.000Z",
+      "order_id": 3,
+      "is_success": false,
+      "user_id": 1,
+      "list_id": 4,
+      "id": 6
+    },
+    {
+      "product_name": "meat cow",
+      "category_id": 11,
+      "category_name": "meat",
+      "shop_name": "Пятерочка",
+      "shop_id": 5,
+      "day": "2022-01-25T00:00:00.000Z",
+      "order_id": 5,
+      "is_success": false,
+      "user_id": 3,
+      "list_id": 10,
+      "id": 7
+    }
+  ]
+}
