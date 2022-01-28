@@ -6,7 +6,7 @@
           <span class="weeklyDay"
             :class="{weekEnd: i === 5 || i === 6}">{{ weekDayName(i) }}</span>
         </div>
-        <div class="calendarItems" v-for="day in dayOfMonth">
+        <div class="calendarItems" v-for="(day, idx) in dayOfMonth" :key="idx">
             <CalendarItem :data="day" :noteData="dateList" v-if="day" @showList="showList"/>
         </div>
       </div>
@@ -24,6 +24,7 @@
               v-for="(shop, idx) in getDateList"
               :idx = "idx"
               :shop_data = "shop"
+              :key="idx"
           >
           </ShopListItem>
 <!--          allShops-->

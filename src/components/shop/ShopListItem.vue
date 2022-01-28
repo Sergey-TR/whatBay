@@ -6,7 +6,8 @@
               {{ shop_data.shop_name }}
             </div>
             <div class="qtyList" @click="showDropListShops">
-              {{ shop_data.lists.length }} список
+              {{ shop_data.lists.length }} 
+              {{ declension(shop_data.lists.length, ["  список", "  списка", "  списков"]) }}
             </div>
           </div>
           <div class="show-shop-lists" v-if="!isVisibleListShops" @click="showDropListShops">
@@ -16,7 +17,7 @@
               <img src="../../assets/img/closeListShop.png">
           </div>
   </div>
-    <div  v-for="(list, idx) in shop_data.lists">
+    <div  v-for="(list, idx) in shop_data.lists" :key="idx">
       <ListShop  v-if="isVisibleListShops">
         <router-link class="wrapper-list"
                      :to="{name: 'shop', params:{ id: shop_data.shop_id,
@@ -34,9 +35,9 @@
             </div>
           </div>
           <div class="wrap-group">
-            <div class="ava">A</div>
-            <div class="ava">B</div>
-            <div class="ava">K</div>
+            <div class="ava">{{ getUser[0].user_name[0] }}</div>
+            <!-- <div class="ava">B</div>
+            <div class="ava">K</div> -->
           </div>
         </router-link>
       </ListShop>
@@ -92,6 +93,10 @@ export default {
         }
       }
       return count
+    },
+    declension(list, txt) {
+      let cases = [2, 0, 1, 1, 1, 2];
+      return txt[(list % 100 > 4 && list % 100 < 20) ? 2 : cases[(list % 10 < 5) ? list % 10 : 5]];
     }
   },
 
@@ -100,7 +105,9 @@ export default {
   },
 
   computed: {
-    ...mapGetters(['getUserId', 'getListProducts', 'getQty']),
+    ...mapGetters(['getUserId', 'getListProducts', 'getQty', 'getUser']),
+
+    
   }
 
 }
@@ -153,6 +160,7 @@ export default {
   justify-content: center;
   font-size: 14px;
   color: #FFFFFF;
-  margin-left: 11px
+  margin-left: 11px;
+  text-transform: uppercase;
 }
 </style>

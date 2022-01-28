@@ -7,6 +7,7 @@
           v-for="(shop, idx) in dataUserId"
           :idx = "idx"
           :shop_data = "shop"
+          :key="idx"
         >
         </ShopListItem>
       </div>
@@ -16,7 +17,6 @@
       <router-link :to="{name: 'newList', params: {user_id: getUserId}}"
                    class="button btn-new-list">+</router-link>
     </div>
-    {{currentLists}}
   </div>
 </template>
 
@@ -41,7 +41,19 @@ export default {
         id: localStorage.getItem('saveUserId')
       }
       return user_id
-    }
+    },
+    currentLists() { 
+      new Date().setMinutes(new Date().getMinutes() - new Date().getTimezoneOffset())
+      const thisDay = new Date().toISOString().split('T')[0]
+      const currentData = []
+      for (let list of this.getListUserId ) {
+        let listByDay = list.created_at.split('T')[0]
+        if (listByDay >= thisDay) {
+          currentData.push(list)
+        }
+      }
+      return currentData
+   }
   },
   computed: {
     ...mapGetters
@@ -59,34 +71,16 @@ export default {
 
    dataUserId() {
       const shops = this.getShopUserId;
-      const lists = this.getListUserId;
-     return userData(shops, lists);
-    },
-
-   currentLists() {
-      const currentData = [];
-      for (let data of this.dataUserId) {
-       // console.log(data)
-        const dataList = []
-        for (let list of data.lists) {
-         //console.log(list)
-          const currentList = []
-          if (list.day.split('T')[0] >= getISO(new Date())) {
-            currentList.push(list)
-           // console.log(currentList)
-          }
-          //console.log(currentList)
-          //dataList.push(currentList)
-         // console.log(dataList)
+      const lists = this.currentLists();
+      const allListsDate = userData(shops, lists);
+      const haveList = [];
+      for (let list of allListsDate) {
+        if (list.lists.length) {
+          haveList.push(list)
         }
-        //console.log(dataList)
-        // if (list.day.split('T')[0] >= getISO(new Date())) {
-          // currentData.push(dataList)
-        // }
       }
-      // console.log(currentData)
-      return currentData
-   }
+      return haveList;
+    },
   },
   async beforeUpdate() {
     if (!Object.keys(this.getUser).length) {

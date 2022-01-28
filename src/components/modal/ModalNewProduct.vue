@@ -74,7 +74,7 @@ export default {
     ...mapGetters(['getAllCategories', 'getListProducts', "getCategoryUserId"]),
 
     getCategoryName() {
-      const categoryName = this.getAllCategories.find(name => name.id === this.category_id)
+      const categoryName = this.getCategoryUserId.find(name => name.id === this.category_id)
         return  categoryName.category_name
     }
   }

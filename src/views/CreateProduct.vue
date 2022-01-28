@@ -22,7 +22,7 @@
           <div class="w-100">
             <select v-model="product" class="new-shop-list-select">
               <option value="null" disabled selected class="opSelected">Выберите продукт</option>
-              <option v-for="opProduct in products" :value="opProduct.product_name">
+              <option v-for="opProduct in products" :value="opProduct.product_name" :key="opProduct.id">
                 {{ opProduct.product_name}}
               </option>
             </select>
