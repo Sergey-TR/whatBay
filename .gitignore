@@ -1,0 +1,10 @@
+<<<<<<< HEAD
+node_modules
+/.idea/
+=======
+/node_modules/
+/.idea/
+
+/SamplePages/.idea/
+/SamplePages/src/vendor/
+>>>>>>> dev_D
