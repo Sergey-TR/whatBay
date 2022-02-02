@@ -3,30 +3,39 @@
     <div class="shop-heading">
       <div class="shop-back">
         <router-link to="/my_shop">
-          <img src="../../assets/img/arrowLeft.svg">
+          <img src="../../assets/img/arrowLeft.svg" />
         </router-link>
       </div>
       <div class="shop-title">
-        <div class="shop-title-name">{{this.shop}}</div>
-        <div class="shop-title-date">{{ this.day | date('short')}}</div>
+        <div class="shop-title-name">{{ this.shop }}</div>
+        <div class="shop-title-date">{{ this.day | date("short") }}</div>
       </div>
       <div class="qtyProducts">
-        <div class="shop-qty-purchase">{{purchase.length}}/</div>
-        <div class="shop-qty-buy">{{getListProducts.length}}</div>
+        <div class="shop-qty-purchase">{{ purchase.length }}/</div>
+        <div class="shop-qty-buy">{{ getListProducts.length }}</div>
       </div>
       <div class="shop-ellipses">
-        <img src="../../assets/img/ellipses.svg">
+        <img src="../../assets/img/ellipses.svg" />
       </div>
     </div>
     <div class="shop-content">
       <div v-if="getListProducts.length">
-        <div class="shop-products-list" v-for="(product, idx) in getListProducts">
+        <div
+          class="shop-products-list"
+          v-for="(product, idx) in getListProducts"
+          :key="idx"
+        >
           <div class="shop-productItem">
             <label :for="idx" class="row-list">
-              <input type="checkbox" class="check-item"
-                    :id="idx" :value="product.product_name" v-model="purchase">
-                <div class="title-of-the-item">{{product.product_name}}</div>
-                <span class="check-box-fake"></span>
+              <input
+                type="checkbox"
+                class="check-item"
+                :id="idx"
+                :value="product.product_name"
+                v-model="purchase"
+              />
+              <div class="title-of-the-item">{{ product.product_name }}</div>
+              <span class="check-box-fake"></span>
             </label>
           </div>
         </div>
@@ -35,10 +44,18 @@
         <p>Ваш список пуст</p>
       </div>
       <router-link
-          :to="{name: 'createProduct',
-           params: {shop: this.shop, day: this.day, id: this.id, list_id: this.listId}}"
-           class="add-product">
-        <img src="../../assets/img/plus.svg">
+        :to="{
+          name: 'createProduct',
+          params: {
+            shop: this.shop,
+            day: this.day,
+            id: this.id,
+            list_id: this.listId,
+          },
+        }"
+        class="add-product"
+      >
+        <img src="../../assets/img/plus.svg" />
         <span class="add-product-text">Добавить продукт</span>
       </router-link>
       <div class="group-people">
@@ -50,62 +67,59 @@
         </div>
       </div>
     </div>
-<!--    <ModalCreateProduct v-if="isModalCreateProduct" @closeModalCreateProduct="closeModalCreateProduct" />-->
+    <!--    <ModalCreateProduct v-if="isModalCreateProduct" @closeModalCreateProduct="closeModalCreateProduct" />-->
   </div>
 </template>
 
 <script>
-import {mapGetters, mapActions} from "vuex";
+import { mapGetters, mapActions } from "vuex";
 
 export default {
   name: "Shop",
-  components: {
-  },
+  components: {},
 
-  props: ['id', 'shop', 'day', 'listId'],
+  props: ["id", "shop", "day", "listId"],
 
   data() {
     return {
       purchase: [],
-    }
+    };
   },
   watch: {
-    purchase() {
-    },
+    purchase() {},
   },
   methods: {
-    ...mapActions(['getOrderProducts']),
+    ...mapActions(["getOrderProducts"]),
     success() {
-      this.getListProducts.forEach(item => {
+      this.getListProducts.forEach((item) => {
         if (item.is_success) {
           if (this.purchase.includes(item.product_name)) {
-            return this.purchase
+            return this.purchase;
           } else {
-            this.purchase.push(item.product_name)
+            this.purchase.push(item.product_name);
           }
         }
-      })
+      });
     },
-
   },
   computed: {
-    ...mapGetters(['getListProducts', 'getUserId'])
+    ...mapGetters(["getListProducts", "getUserId"]),
   },
   mounted() {
     const shopId = {
       order_id: this.id,
       shop_name: this.shop,
       user_id: this.getUserId,
-      day: this.day
-    }
-    this.getOrderProducts(shopId)
-    this.success()
+      day: this.day,
+    };
+    this.getOrderProducts(shopId);
+    this.success();
   },
 
   beforeUpdate() {
     //this.success()
-  }
-}
+  },
+};
 </script>
 
 <style>
@@ -127,7 +141,7 @@ export default {
   border: none;
   outline: none;
   background: none;
-  color: #575F6E;
+  color: #575f6e;
   display: flex;
   align-items: center;
   padding: 0;
@@ -145,7 +159,7 @@ export default {
   margin-top: 45px;
 }
 /* check list */
-.check-list{
+.check-list {
   padding-left: 22px;
   padding-top: 22px;
 }
@@ -165,7 +179,7 @@ export default {
 }
 
 .title-checked {
-  color: #B9B9B9;
+  color: #b9b9b9;
   text-decoration-line: line-through;
 }
 
@@ -180,13 +194,13 @@ export default {
   position: absolute;
   width: 16px;
   height: 16px;
-  border: 1px solid #242E42;
+  border: 1px solid #242e42;
   border-radius: 2px;
   margin-left: -29px;
 }
 /*CHECKED*/
-input:checked + .title-of-the-item{
-  color: #B9B9B9;
+input:checked + .title-of-the-item {
+  color: #b9b9b9;
   text-decoration-line: line-through;
 }
 
@@ -199,21 +213,21 @@ input:checked + .title-of-the-item + .check-box-fake {
 }
 /*end CHECKED*/
 
-.action-list{
+.action-list {
   width: 100%;
   padding-left: 28px;
   display: flex;
   margin-bottom: 24px;
-  color: #242E42;
+  color: #242e42;
 }
 
-.action-list>img{
+.action-list > img {
   width: 14px;
   height: 14px;
   margin-right: 13px;
 }
 
-.participants-list{
+.participants-list {
   margin-top: 24px;
   display: flex;
   width: 100%;
@@ -235,7 +249,7 @@ input:checked + .title-of-the-item + .check-box-fake {
   align-items: center;
   justify-content: center;
   font-size: 14px;
-  color: #FFFFFF;
-  margin-left: 11px
+  color: #ffffff;
+  margin-left: 11px;
 }
 </style>

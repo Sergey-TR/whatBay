@@ -3,10 +3,14 @@
     <div class="shim-user-menu" ref="modal">
       <ul class="choice-menu">
         <li class="choice-menu-item">
-          <router-link to="/" class="choice-a">По спискам</router-link>
+          <router-link :to="{ name: 'allShops' }" class="choice-a"
+            >Все списки</router-link
+          >
         </li>
         <li class="choice-menu-item">
-          <router-link to="/my-shop" class="choice-a">По товарам</router-link>
+          <router-link to="/my-shop" class="choice-a"
+            >Выбрать период</router-link
+          >
         </li>
       </ul>
     </div>
@@ -19,19 +23,19 @@ export default {
 
   methods: {
     closeDropMenu() {
-      this.$emit('closeDropMenu')
-    }
+      this.$emit("closeDropMenu");
+    },
   },
 
   mounted() {
-    let vm = this
-    document.addEventListener('click', function (item) {
-      if (item.target === vm.$refs['modal']) {
-        vm.closeDropMenu()
+    let vm = this;
+    document.addEventListener("click", function (item) {
+      if (item.target === vm.$refs["modal"]) {
+        vm.closeDropMenu();
       }
-    })
-  }
-}
+    });
+  },
+};
 </script>
 
 <style scoped>
@@ -41,7 +45,7 @@ export default {
   padding-left: 0;
   padding-top: 8px;
   padding-bottom: 8px;
-  width: 138px;
+  width: 160px;
   background-color: #ffffff;
   position: absolute;
   right: 16px;
@@ -49,8 +53,7 @@ export default {
   z-index: 1;
   border-radius: 4px;
   box-shadow: 0px 5px 5px -3px rgb(0 0 0 / 20%),
-              0px 8px 10px 1px rgb(0 0 0 / 14%),
-              0px 3px 14px 2px rgb(0 0 0 / 12%);
+    0px 8px 10px 1px rgb(0 0 0 / 14%), 0px 3px 14px 2px rgb(0 0 0 / 12%);
 }
 .choice-menu-item {
   list-style-type: none;

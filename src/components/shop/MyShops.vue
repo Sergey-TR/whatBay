@@ -12,10 +12,16 @@
         </ShopListItem>
       </div>
       <div v-else>
-        <p>У Вас пока нет магазинов и списков</p>
+        <p>У Вас нет списков на текущую и будущие даты</p>
+        <p>Для создания, перейдите в меню, либо нажмите на кнопку внизу экрана</p>
       </div>
+      
       <router-link :to="{name: 'newList', params: {user_id: getUserId}}"
-                   class="button btn-new-list">+</router-link>
+                   class="button btn-new-list">+
+                  <div class="btn-new-list-info">
+                     <i>создать новый список</i>
+                  </div>
+      </router-link>
     </div>
   </div>
 </template>
@@ -107,5 +113,18 @@ export default {
     position: fixed;
     right: 16px;
     bottom: 32px;
+    text-decoration: none;
+  }
+  .btn-new-list-info {
+    position: fixed;
+    right: 32px;
+    bottom: 72px;
+    text-decoration: underline;
+    color: lightslategrey;
+    font-size: 16px;
+    display: none;
+  }
+  .btn-new-list:hover .btn-new-list-info{
+    display: block;
   }
 </style>

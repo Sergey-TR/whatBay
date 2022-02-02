@@ -58,8 +58,19 @@ Vue.use(Router)
             meta: {layout: 'main', auth: true},
             props: true,
             component: () => import("../views/CreateProduct")
+        },
+        {
+            path: '/all/user/shops',
+            name: 'allShops',
+            meta: {layout: 'main', auth: true},
+            component: () => import("../views/AllUserShop")
+        },
+        {
+            path: '/all/lists/for/period',
+            name: 'period',
+            meta: {layout: 'main', auth: true},
+            component: () => import("../views/ListForPeriod")
         }
-
     ]
 })
 

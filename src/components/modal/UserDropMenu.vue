@@ -6,10 +6,20 @@
           <router-link to="/my_shop">Мои магазины</router-link>
         </li>
         <li class="user-menu-item" @click="closeDropMenu">
-          <router-link :to="{name: 'newList', params: {user_id: getUserId}}">Новый список</router-link>
+          <router-link :to="{ name: 'newList', params: { user_id: getUserId } }"
+            >Новый список</router-link
+          >
+        </li>
+        <li class="user-menu-item" @click="closeDropMenu">
+          <router-link :to="{ name: 'allShops' }">Все мои списки</router-link>
+        </li>
+        <li class="user-menu-item" @click="closeDropMenu">
+          <router-link :to="{ name: 'period' }">Списки за период</router-link>
         </li>
         <li class="user-menu-item"><a href="#">Настройки</a></li>
-        <li class="user-menu-item" @click="closeDropMenu"><a href="#">Закрыть</a></li>
+        <li class="user-menu-item" @click="closeDropMenu">
+          <a href="#">Закрыть</a>
+        </li>
         <li class="user-menu-exit" @click="logout"><a>Выйти из аккаута</a></li>
       </ul>
     </div>
@@ -17,34 +27,32 @@
 </template>
 
 <script>
-import {mapGetters} from "vuex";
+import { mapGetters } from "vuex";
 
 export default {
   name: "UserDropMenu",
   methods: {
-
     closeDropMenu() {
-      this.$emit('closeMainMenu')
+      this.$emit("closeMainMenu");
     },
     async logout() {
-      await this.$store.dispatch('logout')
-      this.closeDropMenu()
-      await this.$router.push('/')
-    }
+      await this.$store.dispatch("logout");
+      this.closeDropMenu();
+      await this.$router.push("/");
+    },
   },
   computed: {
-    ...mapGetters(['getUserId']),
+    ...mapGetters(["getUserId"]),
   },
   mounted() {
-    let vm = this
-    document.addEventListener('click', function (item) {
-      if (item.target === vm.$refs['modal']) {
-        vm.closeDropMenu()
+    let vm = this;
+    document.addEventListener("click", function (item) {
+      if (item.target === vm.$refs["modal"]) {
+        vm.closeDropMenu();
       }
-    })
-  }
-
-}
+    });
+  },
+};
 </script>
 
 <style scoped>

@@ -9,6 +9,11 @@ export default function dateFilter(value, format='date') {
         options.day = '2-digit'
         options.month = 'short'
     }
+    if (format.includes('date-num')) {
+        options.day = '2-digit'
+        options.month = '2-digit'
+        options.year = 'numeric'
+    }
 
     return new Intl.DateTimeFormat('ru-RU', options).format(new Date(value))
 }

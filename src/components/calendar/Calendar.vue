@@ -149,11 +149,11 @@ export default {
           listDay.push(list)
         }
       }
-      //console.log(listDay)
       return listDay
     }
   },
     async mounted() {
+      console.log(this.dateList)
       this.getDaysOfMonth(this.selectedDate);
   },
 }

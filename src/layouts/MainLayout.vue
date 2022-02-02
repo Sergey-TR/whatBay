@@ -179,7 +179,7 @@ export default {
   padding-left: 0;
   padding-top: 8px;
   padding-bottom: 8px;
-  width: 138px;
+  width: 160px;
   background-color: #ffffff;
   position: absolute;
   right: 16px;

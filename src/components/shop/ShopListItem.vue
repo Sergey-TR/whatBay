@@ -1,29 +1,48 @@
 <template>
   <div>
-  <div class="wrapper-shop">
-          <div class="shopData">
-            <div class="shopName" @click="showDropListShops">
-              {{ shop_data.shop_name }}
-            </div>
-            <div class="qtyList" @click="showDropListShops">
-              {{ shop_data.lists.length }} 
-              {{ declension(shop_data.lists.length, ["  список", "  списка", "  списков"]) }}
-            </div>
-          </div>
-          <div class="show-shop-lists" v-if="!isVisibleListShops" @click="showDropListShops">
-              <img src="../../assets/img/showListShop.png">
-          </div>
-          <div class="close-shop-lists" v-else @click="closeDropListShops">
-              <img src="../../assets/img/closeListShop.png">
-          </div>
-  </div>
-    <div  v-for="(list, idx) in shop_data.lists" :key="idx">
-      <ListShop  v-if="isVisibleListShops">
-        <router-link class="wrapper-list"
-                     :to="{name: 'shop', params:{ id: shop_data.shop_id,
-                          shop: shop_data.shop_name, day: list.day, listId: list.list_id}}">
+    <div class="wrapper-shop">
+      <div class="shopData">
+        <div class="shopName" @click="showDropListShops">
+          {{ shop_data.shop_name }}
+        </div>
+        <div class="qtyList" @click="showDropListShops">
+          {{ shop_data.lists.length }}
+          {{
+            declension(shop_data.lists.length, [
+              "  список",
+              "  списка",
+              "  списков",
+            ])
+          }}
+        </div>
+      </div>
+      <div
+        class="show-shop-lists"
+        v-if="!isVisibleListShops"
+        @click="showDropListShops"
+      >
+        <img src="../../assets/img/showListShop.png" />
+      </div>
+      <div class="close-shop-lists" v-else @click="closeDropListShops">
+        <img src="../../assets/img/closeListShop.png" />
+      </div>
+    </div>
+    <div v-for="(list, idx) in shop_data.lists" :key="idx">
+      <ListShop v-if="isVisibleListShops">
+        <router-link
+          class="wrapper-list"
+          :to="{
+            name: 'shop',
+            params: {
+              id: shop_data.shop_id,
+              shop: shop_data.shop_name,
+              day: list.day,
+              listId: list.list_id,
+            },
+          }"
+        >
           <div class="wrap-list-day-name">
-            <div class="shop-data">{{ list.day | date('short') }}</div>
+            <div class="shop-data">{{ list.day | date("short") }}</div>
             <div class="shop-name">{{ list.list_name }}</div>
           </div>
           <div class="wrap-qty">
@@ -31,7 +50,7 @@
               {{ purchase(list.list_id, shop_data.shop_id, list.day) }}/
             </div>
             <div class="qty-list">
-              {{quantity(list.list_id, shop_data.shop_id, list.day)}}
+              {{ quantity(list.list_id, shop_data.shop_id, list.day) }}
             </div>
           </div>
           <div class="wrap-group">
@@ -42,75 +61,83 @@
         </router-link>
       </ListShop>
     </div>
-<!--    {{getQty}}-->
   </div>
 </template>
 
 <script>
 import ListShop from "../modal/ModalListShop";
-import {mapGetters} from "vuex";
+import { mapGetters } from "vuex";
 
 export default {
   name: "ShopListItem",
   components: {
     ListShop,
   },
-  props: ['shop_data'],
+  props: ["shop_data"],
   data() {
     return {
       isVisibleListShops: false,
-      listId: ''
-    }
+      listId: "",
+    };
   },
   methods: {
     showDropListShops() {
-        this.isVisibleListShops = true
+      this.isVisibleListShops = true;
     },
     closeDropListShops() {
-      this.isVisibleListShops = false
+      this.isVisibleListShops = false;
     },
     async getUserOrders() {
       const userId = {
-        user_id: localStorage.getItem('saveUserId')
-      }
-      await this.$store.dispatch('getOrderUser', userId)
+        user_id: localStorage.getItem("saveUserId"),
+      };
+      await this.$store.dispatch("getOrderUser", userId);
     },
     quantity(listId, shopId, listDay) {
       let count = 0;
       for (let list of this.getQty) {
-        if (list.day === listDay && list.list_id === listId && list.shop_id === shopId) {
-          count += 1
+        if (
+          list.day === listDay &&
+          list.list_id === listId &&
+          list.shop_id === shopId
+        ) {
+          count += 1;
         }
       }
-      return count
+      return count;
     },
     purchase(listId, shopId, listDay) {
-      let count = 0
+      let count = 0;
       for (let list of this.getQty) {
-        if (list.day === listDay && list.list_id === listId &&
-            list.shop_id === shopId && list.is_success === true) {
-          count +=1
+        if (
+          list.day === listDay &&
+          list.list_id === listId &&
+          list.shop_id === shopId &&
+          list.is_success === true
+        ) {
+          count += 1;
         }
       }
-      return count
+      return count;
     },
     declension(list, txt) {
       let cases = [2, 0, 1, 1, 1, 2];
-      return txt[(list % 100 > 4 && list % 100 < 20) ? 2 : cases[(list % 10 < 5) ? list % 10 : 5]];
-    }
+      return txt[
+        list % 100 > 4 && list % 100 < 20
+          ? 2
+          : cases[list % 10 < 5 ? list % 10 : 5]
+      ];
+    },
   },
 
   mounted() {
-    this.getUserOrders()
+    this.getUserOrders();
   },
 
   computed: {
-    ...mapGetters(['getUserId', 'getListProducts', 'getQty', 'getUser']),
-
-    
-  }
-
-}
+    ...mapGetters(["getUserId", "getListProducts", "getQty", "getUser"]),
+  },
+};
 </script>
 
 <style>
@@ -146,7 +173,9 @@ export default {
   min-width: 110px;
   padding-left: 20px;
 }
-.wrap-list-day-name, .wrap-qty, .wrap-group {
+.wrap-list-day-name,
+.wrap-qty,
+.wrap-group {
   display: flex;
   align-items: center;
 }
@@ -159,7 +188,7 @@ export default {
   align-items: center;
   justify-content: center;
   font-size: 14px;
-  color: #FFFFFF;
+  color: #ffffff;
   margin-left: 11px;
   text-transform: uppercase;
 }

@@ -80,6 +80,11 @@
       "shop_name": "metro",
       "user_id": 3,
       "id": 6
+    },
+    {
+      "shop_name": "Magnit",
+      "user_id": 1,
+      "id": 7
     }
   ],
   "lists": [
@@ -159,6 +164,20 @@
       "created_at": "2022-01-29T00:00:00.000Z",
       "user_id": 1,
       "id": 11
+    },
+    {
+      "list_name": "list",
+      "shop_id": 7,
+      "created_at": "2022-01-31T00:00:00.000Z",
+      "user_id": 1,
+      "id": 12
+    },
+    {
+      "list_name": "listLenta",
+      "shop_id": 2,
+      "created_at": "2022-01-31T00:00:00.000Z",
+      "user_id": 1,
+      "id": 13
     }
   ],
   "categories": [
@@ -331,6 +350,30 @@
       "category_id": 2,
       "user_id": 1,
       "id": 19
+    },
+    {
+      "product_name": "beer",
+      "category_id": 9,
+      "user_id": 1,
+      "id": 20
+    },
+    {
+      "product_name": "vodka",
+      "category_id": 9,
+      "user_id": 1,
+      "id": 21
+    },
+    {
+      "product_name": "banana",
+      "category_id": 3,
+      "user_id": 1,
+      "id": 22
+    },
+    {
+      "product_name": "apple",
+      "category_id": 3,
+      "user_id": 1,
+      "id": 23
     }
   ],
   "orders": [
@@ -436,6 +479,53 @@
       "user_id": 1,
       "list_id": 8,
       "id": 8
+    },
+    {
+      "product_name": "beer",
+      "category_id": 9,
+      "category_name": "alko",
+      "shop_name": "Magnit",
+      "shop_id": 7,
+      "day": "2022-01-31T00:00:00.000Z",
+      "order_id": 7,
+      "is_success": false,
+      "user_id": 1,
+      "list_id": 12,
+      "id": 9
+    },
+    {
+      "product_name": "vodka",
+      "category_id": 9,
+      "category_name": "alko",
+      "shop_name": "Magnit",
+      "shop_id": "7",
+      "day": "2022-01-31T00:00:00.000Z",
+      "order_id": "7",
+      "is_success": false,
+      "user_id": 1,
+      "id": 10
+    },
+    {
+      "product_name": "banana",
+      "category_id": 3,
+      "shop_name": "Magnit",
+      "shop_id": "7",
+      "day": "2022-01-31T00:00:00.000Z",
+      "order_id": "7",
+      "is_success": false,
+      "user_id": 1,
+      "id": 11
+    },
+    {
+      "product_name": "apple",
+      "category_id": 3,
+      "shop_name": "Magnit",
+      "shop_id": "7",
+      "day": "2022-01-31T00:00:00.000Z",
+      "order_id": "7",
+      "is_success": false,
+      "user_id": 1,
+      "id": 12
     }
   ]
 }

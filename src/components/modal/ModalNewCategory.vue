@@ -4,16 +4,25 @@
       <div class="w-100 h-100 bg-white px-3 pt-4 pb-4">
         <div class="closeIcon">
           <router-link to="/">
-            <img class="logo" src="../../assets/img/logo1.svg" alt="">
+            <img class="logo" src="../../assets/img/logo1.svg" alt="" />
           </router-link>
-          <b-icon icon="plus-circle" rotate="45" variant="secondary" @click="closeDropMenu"></b-icon>
+          <b-icon
+            icon="plus-circle"
+            rotate="45"
+            variant="secondary"
+            @click="closeDropMenu"
+          ></b-icon>
         </div>
         <div class="w-100 mt-2">
           <h5 class="mb-4">Создать новую категорию</h5>
           <div class="w-100 modalAddProduct">
             <form class="w-100" method="post" @submit.prevent="createCategory">
-              <input type="text" class="inputAddProduct" placeholder="введите наименование категории"
-                     v-model="nameCategory">
+              <input
+                type="text"
+                class="inputAddProduct"
+                placeholder="введите наименование категории"
+                v-model="nameCategory"
+              />
               <button class="button btn-add" type="submit">Создать</button>
             </form>
           </div>
@@ -24,56 +33,57 @@
 </template>
 
 <script>
-import {mapGetters, mapActions} from "vuex";
+import { mapGetters, mapActions } from "vuex";
 
 export default {
   name: "ModalNewCategory",
 
-  props: ['shop', 'day', 'id', 'category_id'],
+  props: ["shop", "day", "id", "category_id"],
 
   data() {
     return {
-      nameCategory: ''
-    }
+      nameCategory: "",
+    };
   },
 
   methods: {
     closeDropMenu() {
-      this.$emit('closeModalCreateCategory')
+      this.$emit("closeModalCreateCategory");
     },
-    ...mapActions(['getCategories', 'getCategoryFromUserId']),
+    ...mapActions(["getCategories", "getCategoryFromUserId"]),
     async createCategory() {
-      const isCategory = this.getAllCategories.filter(item => item.category_name === this.nameCategory)
+      const isCategory = this.getAllCategories.filter(
+        (item) => item.category_name === this.nameCategory
+      );
       if (!isCategory.length) {
-        const newCategory ={
+        const newCategory = {
           category_name: this.nameCategory,
-          user_id: this.getUserId
-        }
+          user_id: this.getUserId,
+        };
         const id = {
-          id: this.getUserId
-        }
-        console.log(newCategory)
+          id: this.getUserId,
+        };
+        console.log(newCategory);
         try {
-          await this.$store.dispatch('createNewCategory', newCategory)
-          console.log('after createNewCategory')
-          await this.closeDropMenu()
-          await this.$store.dispatch('getCategoryFromUserId', id)
-          await this.getCategories()
-
+          await this.$store.dispatch("createNewCategory", newCategory);
+          console.log("after createNewCategory");
+          await this.closeDropMenu();
+          await this.$store.dispatch("getCategoryFromUserId", id);
+          await this.getCategories();
         } catch (e) {}
       } else {
-        alert('Категория есть в списке')
+        alert("Категория есть в списке");
       }
-    }
+    },
   },
 
   computed: {
-    ...mapGetters(['getAllCategories', 'getUserId'])
+    ...mapGetters(["getAllCategories", "getUserId"]),
   },
   // mounted() {
   //   this.getCategories()
   // }
-}
+};
 </script>
 
 <style scoped>
