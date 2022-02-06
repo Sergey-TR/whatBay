@@ -1,68 +1,70 @@
 <template>
   <div>
-  <div class="selector-wrapper">
-    <div class="selector">
-      <button class="btn btn-selector" @click="prevent">
-        <img src="../../assets/img/sliderLeft.png">
-      </button>
-      <div class="selector-body">{{ getMonthTitle() + '  ' + getYear() }}</div>
-      <button class="btn btn-selector" @click="next">
-        <img src="../../assets/img/sliderRight.png">
-      </button>
+    <div class="selector-wrapper">
+      <div class="selector">
+        <button class="btn btn-selector" @click="prevent">
+          <img src="../../assets/img/sliderLeft.png" />
+        </button>
+        <div class="selector-body">
+          {{ getMonthTitle() + "  " + getYear() }}
+        </div>
+        <button class="btn btn-selector" @click="next">
+          <img src="../../assets/img/sliderRight.png" />
+        </button>
+      </div>
     </div>
-  </div>
-    <Calendar :selectedDate="date"/>
+    <Calendar :selectedDate="date" />
   </div>
 </template>
 
 <script>
 import Calendar from "./Calendar";
 import UserDropMenu from "../modal/UserDropMenu";
-import {mapGetters} from "vuex";
+import { mapGetters } from "vuex";
 
 export default {
   name: "CalendarSelector",
   components: {
     Calendar,
-    UserDropMenu
+    UserDropMenu,
   },
 
   data() {
     return {
       date: new Date(),
-      isDropMenuVisible: false
-    }
+      isDropMenuVisible: false,
+    };
   },
   methods: {
     getMonthTitle() {
-      const m = this.date.getMonth()
-      const d = new Date(2020, m, 1)
-      return d.toLocaleDateString('ru-RU', {month: 'long'})
+      const m = this.date.getMonth();
+      const d = new Date(2020, m, 1);
+      return d.toLocaleDateString("ru-RU", { month: "long" });
     },
     getYear() {
-      return this.date.getFullYear()
+      return this.date.getFullYear();
     },
     next() {
-      const date = new Date(this.date)
-      date.setMonth(date.getMonth() + 1)
-      this.date = date
+      const date = new Date(this.date);
+      date.setMonth(date.getMonth() + 1);
+      this.date = date;
     },
     prevent() {
-      const date = new Date(this.date)
-      date.setMonth(date.getMonth() - 1)
-      this.date = date
+      const date = new Date(this.date);
+      date.setMonth(date.getMonth() - 1);
+      this.date = date;
     },
     showUserMenu() {
-      this.isDropMenuVisible = true
+      this.isDropMenuVisible = true;
     },
     closeDropMenu() {
-      this.isDropMenuVisible = false
-    }
+      this.isDropMenuVisible = false;
+    },
   },
   computed: {
-    ...mapGetters(['getShopsList'])
-  }
-}
+    ...mapGetters(["getShopsList"]),
+  },
+};
 </script>
 
 <style scoped>
@@ -79,7 +81,7 @@ export default {
 }
 .avatar {
   width: 32px;
-  background-color: #C4C4C4;
+  background-color: #c4c4c4;
   border-radius: 7px;
   color: #ffffff;
   height: 32px;

@@ -17,13 +17,13 @@ export default {
             }
         },
         async createNewShop({dispatch, commit}, {shop_name, user_id}) {
-            API.post(baseURL + 'shops', {shop_name, user_id})
+            return API.post(baseURL + 'shops', {shop_name, user_id})
                 .then(res => {
                     localStorage.setItem('shop', res.data)
                 })
         },
         async getShopFromUserId({dispatch, commit}, {id}) {
-            API.get(baseURL + 'shops' + '?user_id=' + id)
+            return API.get(baseURL + 'shops' + '?user_id=' + id)
                 .then(res => {
                    const shopUserId = res.data
                     commit('updateShopUserId', shopUserId)

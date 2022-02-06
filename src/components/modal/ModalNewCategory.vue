@@ -67,7 +67,7 @@ export default {
         try {
           await this.$store.dispatch("createNewCategory", newCategory);
           console.log("after createNewCategory");
-          await this.closeDropMenu();
+          this.closeDropMenu();
           await this.$store.dispatch("getCategoryFromUserId", id);
           await this.getCategories();
         } catch (e) {}

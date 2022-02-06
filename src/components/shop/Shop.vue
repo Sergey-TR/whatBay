@@ -22,19 +22,26 @@
       <div v-if="getListProducts.length">
         <div
           class="shop-products-list"
-          v-for="(product, idx) in getListProducts"
-          :key="idx"
+          v-for="product in getListProducts"
+          :key="product.id"
         >
-          <div class="shop-productItem">
-            <label :for="idx" class="row-list">
+          <div class="shop-productItem" >
+            <label
+              :for="product.product_name"
+              class="row-list"
+            >
               <input
                 type="checkbox"
                 class="check-item"
-                :id="idx"
+                :id="product.product_name"
                 :value="product.product_name"
                 v-model="purchase"
+                
               />
-              <div class="title-of-the-item">{{ product.product_name }}</div>
+              <div class="title-of-the-item" 
+                @click="checkProduct(product.id, product.product_name)" >
+                {{ product.product_name }}
+              </div>
               <span class="check-box-fake"></span>
             </label>
           </div>
@@ -90,7 +97,9 @@ export default {
   },
   methods: {
     ...mapActions(["getOrderProducts"]),
+
     success() {
+      console.log("success" + this.getListProducts);
       this.getListProducts.forEach((item) => {
         if (item.is_success) {
           if (this.purchase.includes(item.product_name)) {
@@ -101,11 +110,35 @@ export default {
         }
       });
     },
+
+    checkProduct(id, name) {
+      const orderId = {
+        id: id,
+      };
+      if (Object.keys(this.purchase).length) {
+        if(this.purchase.includes(name)) {
+          console.log(name + 'includes')
+          this.$store.dispatch("unCheckCheckbox", orderId);
+        } else {
+          console.log(name)
+          this.$store.dispatch("changeCheckbox", orderId);
+        }
+        
+      } else {
+        console.log("no arr");
+        this.$store.dispatch("changeCheckbox", orderId);
+        // this.success();
+       console.log('after no arr')
+       return true
+      }
+    },
   },
+
   computed: {
     ...mapGetters(["getListProducts", "getUserId"]),
   },
-  mounted() {
+
+  beforeMount() {
     const shopId = {
       order_id: this.id,
       shop_name: this.shop,
@@ -113,11 +146,14 @@ export default {
       day: this.day,
     };
     this.getOrderProducts(shopId);
-    this.success();
+  },
+
+  mounted() {   
+    //this.success();
   },
 
   beforeUpdate() {
-    //this.success()
+    this.success();
   },
 };
 </script>

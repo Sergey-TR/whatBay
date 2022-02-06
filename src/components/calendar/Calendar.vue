@@ -2,67 +2,43 @@
   <div>
     <div class="content">
       <div class="calendar">
-        <div class="calendar-week" v-for="(_,i) in 7">
-          <span class="weeklyDay"
-            :class="{weekEnd: i === 5 || i === 6}">{{ weekDayName(i) }}</span>
+        <div class="calendar-week" v-for="(_, i) in 7">
+          <span class="weeklyDay" :class="{ weekEnd: i === 5 || i === 6 }">{{
+            weekDayName(i)
+          }}</span>
         </div>
         <div class="calendarItems" v-for="(day, idx) in dayOfMonth" :key="idx">
-            <CalendarItem :data="day" :noteData="dateList" v-if="day" @showList="showList"/>
+          <CalendarItem
+            :data="day"
+            :noteData="dateList"
+            v-if="day"
+            @showList="showList"
+          />
         </div>
       </div>
       <div class="listDate">
         <div class="header-list">
           <div class="selectedDate">
-            {{ dateList | date('date') }}
+            {{ dateList | date("date") }}
           </div>
           <div class="choiceMenu">
-            <img src="../../assets/img/settings.svg" @click="showChoiceMenu">
+            <img src="../../assets/img/settings.svg" @click="showChoiceMenu" />
           </div>
         </div>
         <div v-if="Object.keys(thisDateList).length">
           <ShopListItem
-              v-for="(shop, idx) in getDateList"
-              :idx = "idx"
-              :shop_data = "shop"
-              :key="idx"
+            v-for="(shop, idx) in getDateList"
+            :idx="idx"
+            :shop_data="shop"
+            :key="idx"
           >
           </ShopListItem>
-<!--          allShops-->
-<!--          *****************************************************-->
-<!--          <div class="listDate_body" v-for="shopList in getDateList">-->
-<!--            <div class="wrapper-shop">-->
-<!--              <div class="shopData">-->
-<!--                <div class="shopName">-->
-<!--                  {{ shopList.shop_name }}-->
-<!--                </div>-->
-<!--                <div class="qtyList">-->
-<!--                  {{ shopList.lists.length }} список-->
-<!--                </div>-->
-<!--              </div>-->
-<!--              <div class="show-shop-lists">-->
-<!--                <img src="../../assets/img/showListShop.png">-->
-<!--              </div>-->
-<!--              ************************************************-->
-<!--              <div class="close-shop-lists" v-else @click="closeDropListShops">-->
-<!--                <img src="../../assets/img/closeListShop.png">-->
-<!--              </div>-->
-<!--            </div>-->
-<!--            <div class="shopData">-->
-<!--              {{ dateList | date('short') }}-->
-<!--            </div>-->
-<!--            <div class="shopName">-->
-<!--              {{ shopList.shop}}-->
-<!--            </div>-->
-<!--            <div class="quantity">-->
-<!--              {{ shopList.purchase }}/{{ shopList.buy_prod }}-->
-<!--            </div>-->
-<!--          </div>-->
         </div>
         <div v-else>
           <p>Нет списков на текущую дату</p>
         </div>
       </div>
-      <ChoiceMenu v-if="isVisible" @closeDropMenu="closeDropMenu"/>
+      <ChoiceMenu v-if="isVisible" @closeDropMenu="closeDropMenu" />
     </div>
   </div>
 </template>
@@ -70,7 +46,7 @@
 <script>
 import CalendarItem from "./CalendarItem";
 import ChoiceMenu from "../modal/ChoiceMenu";
-import {mapGetters, mapActions} from "vuex"
+import { mapGetters, mapActions } from "vuex";
 import userData from "../composables/userData";
 import ShopListItem from "../shop/ShopListItem";
 
@@ -79,30 +55,30 @@ export default {
   components: {
     CalendarItem,
     ChoiceMenu,
-    ShopListItem
+    ShopListItem,
   },
 
-  props: ['selectedDate'],
+  props: ["selectedDate"],
 
   data() {
     return {
       isVisible: false,
       dateList: new Date(),
-    }
+    };
   },
 
   computed: {
     ...mapGetters([
-        'dayOfMonth',
-        'allShops',
-        'getShopsList',
-        'getQty',
-        'getShopUserId',
-        'getListByDay',
-        'getListUserId'
+      "dayOfMonth",
+      "allShops",
+      "getShopsList",
+      "getQty",
+      "getShopUserId",
+      "getListByDay",
+      "getListUserId",
     ]),
     thisDateList() {
-      return this.listByDate()
+      return this.listByDate();
     },
     getDateList() {
       const shops = this.getShopUserId;
@@ -111,11 +87,11 @@ export default {
       const haveList = [];
       for (let list of allListsDate) {
         if (list.lists.length) {
-          haveList.push(list)
+          haveList.push(list);
         }
       }
       return haveList;
-    }
+    },
   },
   watch: {
     selectedDate() {
@@ -123,40 +99,41 @@ export default {
     },
   },
   methods: {
-      ...mapActions(['fetchShops', 'getDaysOfMonth', 'getUserListByDate']),
+    ...mapActions(["fetchShops", "getDaysOfMonth", "getUserListByDate"]),
 
     weekDayName(i) {
-      const d = new Date('2021-04-05')
-      d.setDate(d.getDate() + i)
-      return d.toLocaleDateString('ru-RU', {weekday: 'short'})
+      const d = new Date("2021-04-05");
+      d.setDate(d.getDate() + i);
+      return d.toLocaleDateString("ru-RU", { weekday: "short" });
     },
     showChoiceMenu() {
-      this.isVisible = true
+      this.isVisible = true;
     },
     closeDropMenu() {
-      this.isVisible = false
+      this.isVisible = false;
     },
     showList(selectDate) {
-      this.dateList = selectDate
+      this.dateList = selectDate;
     },
     listByDate() {
-      this.dateList.setMinutes(this.dateList.getMinutes() - this.dateList.getTimezoneOffset())
-      const noteDay = this.dateList.toISOString().split('T')[0]
-      const listDay = []
-      for (let list of this.getListUserId ) {
-        let listByDay = list.created_at.split('T')[0]
+      this.dateList.setMinutes(
+        this.dateList.getMinutes() - this.dateList.getTimezoneOffset()
+      );
+      const noteDay = this.dateList.toISOString().split("T")[0];
+      const listDay = [];
+      for (let list of this.getListUserId) {
+        let listByDay = list.created_at.split("T")[0];
         if (listByDay === noteDay) {
-          listDay.push(list)
+          listDay.push(list);
         }
       }
-      return listDay
-    }
+      return listDay;
+    },
   },
-    async mounted() {
-      console.log(this.dateList)
-      this.getDaysOfMonth(this.selectedDate);
+  async mounted() {
+    this.getDaysOfMonth(this.selectedDate);
   },
-}
+};
 </script>
 
 <style scoped>

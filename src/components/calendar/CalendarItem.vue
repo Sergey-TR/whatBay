@@ -1,8 +1,8 @@
 <template>
   <div class="days-wrapper">
-      <div :class="calendarItem" @click="showList">
-          {{ data.getDate() }}
-      </div>
+    <div :class="calendarItem" @click="showList">
+      {{ data.getDate() }}
+    </div>
   </div>
 </template>
 
@@ -13,50 +13,53 @@ import { mapGetters } from "vuex";
 
 export default {
   name: "CalendarItem",
-  props: ['data', 'noteData'],
+  props: ["data", "noteData"],
 
   data() {
     return {
       date: new Date(),
-    }
+    };
   },
 
   methods: {
     showList() {
-      this.$emit('showList', this.data)
-    }
+      this.$emit("showList", this.data);
+    },
   },
 
   computed: {
-    ...mapGetters(['dayOfMonth', 'getShopsList', 'getQty', 'getListUserId']),
+    ...mapGetters(["dayOfMonth", "getShopsList", "getQty", "getListUserId"]),
 
     calendarItem() {
-      const note = noteDays(this.getListUserId)
-       let classes = '';
-       let purchase = '';
-       const isCurrentDate = getISO(new Date()) === getISO(this.data)
+      const note = noteDays(this.getListUserId);
+      let classes = "";
+      let purchase = "";
+      const isCurrentDate = getISO(new Date()) === getISO(this.data);
       for (let i = 0; i <= note.length - 1; i++) {
-        if ((getISO(note[i]) === getISO(this.data))
-            && note.length
-            && (getISO(note[i]) >= getISO(new Date())))
-        {
-          classes = true
-        } else if ((getISO(note[i]) === getISO(this.data))
-            && note.length
-            && (getISO(note[i]) < getISO(new Date()))) {
-          purchase = true
+        if (
+          getISO(note[i]) === getISO(this.data) &&
+          note.length &&
+          getISO(note[i]) >= getISO(new Date())
+        ) {
+          classes = true;
+        } else if (
+          getISO(note[i]) === getISO(this.data) &&
+          note.length &&
+          getISO(note[i]) < getISO(new Date())
+        ) {
+          purchase = true;
         }
-     }
-      return {
-        'primary': isCurrentDate,
-        'default': !isCurrentDate,
-        'note': classes,
-        'done': purchase
       }
+      return {
+        primary: isCurrentDate,
+        default: !isCurrentDate,
+        note: classes,
+        done: purchase,
+      };
     },
   },
-  mounted() {}
-}
+  mounted() {},
+};
 </script>
 
 <style scoped>
@@ -65,10 +68,11 @@ export default {
   height: 100%;
 }
 .primary {
-  background: #2C9AB7;
+  background: #2c9ab7;
   color: white;
 }
-.default, .primary{
+.default,
+.primary {
   width: 100%;
   height: 100%;
   display: flex;

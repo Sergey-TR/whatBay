@@ -18,7 +18,7 @@ export default {
                 })
         },
         async getListFromUserId({dispatch, commit}, {id}) {
-            API.get(baseURL + 'lists' + '?user_id=' + id)
+            return API.get(baseURL + 'lists' + '?user_id=' + id)
                 .then(res => {
                     const listUserId = res.data
                     commit('updateListUserId', listUserId)
@@ -26,7 +26,7 @@ export default {
 
         },
         async getOrderUser({dispatch, commit}, {user_id}) {
-            API.get(baseURL + 'orders' + '?user_id=' + user_id)
+            return API.get(baseURL + 'orders' + '?user_id=' + user_id)
                 .then(res => {
                     const listQty = res.data
                     commit('updListQty', listQty)
@@ -38,7 +38,17 @@ export default {
                     const listByDay = res.data
                     commit('updateListByDay', listByDay)
                 })
-        }
+        },
+        async changeCheckbox({dispatch, commit}, {id}) {
+            console.log('check')
+            return API.patch(baseURL + 'orders/' + id, {is_success: true});
+            console.log('after check')
+        },
+        async unCheckCheckbox({dispatch, commit}, {id}) {
+            console.log('uncheck')
+            return API.patch(baseURL + 'orders/' + id, {is_success: false});
+            console.log('after uncheck')
+        },
     },
 
     mutations: {

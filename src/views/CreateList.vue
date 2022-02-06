@@ -8,31 +8,51 @@
         <div class="select-wrapper">
           <div class="w-100">
             <select v-model="shop_id" class="new-shop-list-select">
-              <option value="null" disabled selected class="opSelected">Выберите магазин</option>
-              <option v-for="option in getShopUserId" :key="option.id"
-                      :value="option.id">
+              <option value="null" disabled selected class="opSelected">
+                Выберите магазин
+              </option>
+              <option
+                v-for="option in getShopUserId"
+                :key="option.id"
+                :value="option.id"
+              >
                 {{ option.shop_name }}
               </option>
             </select>
           </div>
           <div class="btn-add-product" @click="showModalNewShop">+</div>
         </div>
-        <p class="small p-2">выберите магазин или
-          <span class="btn-add-category" @click="showModalNewShop">добавте новый</span></p>
-        <input type="text" class="inputAddProduct" placeholder="введите наименование списка"
-               v-model="listName">
-        <b-form-datepicker id="dp" v-model="dateList" :min="min" locale="ru"
+        <p class="small p-2">
+          выберите магазин или
+          <span class="btn-add-category" @click="showModalNewShop"
+            >добавте новый</span
+          >
+        </p>
+        <input
+          type="text"
+          class="inputAddProduct"
+          placeholder="введите наименование списка"
+          v-model="listName"
+        />
+        <b-form-datepicker
+          id="dp"
+          v-model="dateList"
+          :min="min"
+          locale="ru"
           selected-variant="info"
           placeholder="Дата"
-          :date-format-options="{year: 'numeric', month: '2-digit', day: '2-digit'}"
-          size="lg"></b-form-datepicker>
+          :date-format-options="{
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+          }"
+          size="lg"
+        ></b-form-datepicker>
         <label for="dp" class="small p-2">выберите дату</label>
         <div class="select-wrapper">
           <div class="w-100">
             <select class="new-shop-list-select">
-              <option>
-                Добавить участника
-              </option>
+              <option>Добавить участника</option>
             </select>
           </div>
           <div class="btn-add-product">+</div>
@@ -41,70 +61,73 @@
       </div>
       <button class="button btn-add" type="submit">Добавить</button>
     </form>
-    <ModalNewShop v-if="isModalNewShop"
-                  @closeModalCreateShop="closeModalCreateShop"
-                  :user_id="this.user_id"
+    <ModalNewShop
+      v-if="isModalNewShop"
+      @closeModalCreateShop="closeModalCreateShop"
+      :user_id="this.user_id"
     />
   </div>
 </template>
 
 <script>
-import {mapGetters, mapActions} from "vuex";
+import { mapGetters, mapActions } from "vuex";
 import ModalNewShop from "../components/modal/ModalNewShop";
 
 export default {
   name: "CreateList",
 
   components: {
-    ModalNewShop
+    ModalNewShop,
   },
 
-  props: ['user_id'],
+  props: ["user_id"],
 
   data() {
     return {
-      shop_id: 'null',
-      listName: '',
-      dateList: '',
+      shop_id: "null",
+      listName: "",
+      dateList: "",
       min: new Date(),
-      isModalNewShop: false
-    }
+      isModalNewShop: false,
+    };
   },
   watch: {
-    dateList() {
-    }
+    dateList() {},
   },
   methods: {
-    ...mapActions(['getOptionsList', 'allLists']),
-   async createList() {
+    ...mapActions(["getOptionsList", "allLists"]),
+    async createList() {
       const list = {
         list_name: this.listName,
         shop_id: this.shop_id,
         created_at: new Date(this.dateList),
-        user_id: this.user_id
-      }
+        user_id: this.user_id,
+      };
       try {
-        await this.$store.dispatch('createNewList', list)
-        await this.$router.push('/my_shop')
+        await this.$store.dispatch("createNewList", list);
+        await this.$router.push("/my_shop");
       } catch (e) {}
-
     },
     showModalNewShop() {
-      this.isModalNewShop = true
+      this.isModalNewShop = true;
     },
     closeModalCreateShop() {
-      this.isModalNewShop = false
-    }
+      this.isModalNewShop = false;
+    },
   },
   computed: {
-    ...mapGetters(['getShopsOptionList', 'getAllCategories', 'getAllLists', 'getShopUserId'])
+    ...mapGetters([
+      "getShopsOptionList",
+      "getAllCategories",
+      "getAllLists",
+      "getShopUserId",
+    ]),
   },
   async mounted() {
-    await this.getOptionsList()
-    await this.allLists()
+    await this.getOptionsList();
+    await this.allLists();
   },
-
-}
+};
 </script>
 
 <style>
@@ -137,19 +160,19 @@ export default {
   border: none;
   background: none;
   outline: none;
-  color: #2C9AB7;
+  color: #2c9ab7;
 }
 .btn-add-category:hover {
-  color: #2C9AB7;
+  color: #2c9ab7;
   font-weight: bold;
   text-decoration: underline;
 }
 .btn-add-product {
-  border: 1px solid #2C9AB7;
+  border: 1px solid #2c9ab7;
   background: none;
   outline: none;
   border-radius: 7px;
-  color: #2C9AB7;
+  color: #2c9ab7;
   width: 50px;
   height: 50px;
   font-size: 32px;
@@ -159,8 +182,8 @@ export default {
   justify-content: center;
 }
 .btn-add-product:hover {
-  background: #2C9AB7;
-  color: #FFFFFF;
+  background: #2c9ab7;
+  color: #ffffff;
 }
 .inputAddProduct {
   border: 1px solid #c4c4c4;

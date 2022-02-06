@@ -13,18 +13,6 @@ export default {
   components: {
     Shop
   }
-  //props: ['list'],
-
-  // methods: {
-  //   ...mapActions(['getLists'])
-  // },
-  // computed: {
-  //   ...mapGetters(['getListShop'])
-  // },
-  // mounted() {
-  //   this.getLists(nameShop)
-  // }
-
 }
 </script>
 

@@ -22,7 +22,7 @@
           <div class="w-100">
             <select v-model="product" class="new-shop-list-select">
               <option value="null" disabled selected class="opSelected">Выберите продукт</option>
-              <option v-for="opProduct in products" :value="opProduct.product_name" :key="opProduct.id">
+              <option v-for="opProduct in getProductUserId" :value="opProduct.product_name" :key="opProduct.id">
                 {{ opProduct.product_name}}
               </option>
             </select>
@@ -53,7 +53,7 @@
 </template>
 
 <script>
-import {mapGetters} from "vuex";
+import {mapActions, mapGetters} from "vuex";
 import ModalNewCategory from "../components/modal/ModalNewCategory";
 import ModalNewProduct from "../components/modal/ModalNewProduct";
 import productFilter from "../filters/product.filter";
@@ -70,7 +70,7 @@ export default {
   data () {
     return {
       product: 'null',
-      category_id: 0,
+      category_id: 'null',
       isModalNewCategory: false,
       isModalNewProduct: false
     }
@@ -114,7 +114,9 @@ export default {
     },
     closeModalCreateCategory() {
       this.isModalNewCategory = false
-    }
+    },
+
+    ...mapActions(['getProductFromUserId', 'getCategoryFromUserId'])
   },
 
   computed: {
@@ -130,7 +132,13 @@ export default {
       return  productFilter(this.category_id, this.getProductUserId)
     },
   },
-  mounted() {}
+  mounted() {
+    const user_id = {
+      id: localStorage.getItem('saveUserId')
+    }
+    this.getCategoryFromUserId(user_id)
+    this.getProductFromUserId(user_id)
+  }
 }
 </script>
 

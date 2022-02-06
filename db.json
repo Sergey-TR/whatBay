@@ -10,33 +10,6 @@
       "id": 1
     },
     {
-      "email": "admin15@mail.com",
-      "password": "$2a$10$Gd0ncXtuTWM206fV88owH.2qTAmJrg4QCuCi52l.g4ZQoZtd5njBC",
-      "user_name": "admin",
-      "confirmPassword": "admin15",
-      "firstname": "administrator",
-      "lastname": "ministrator",
-      "id": 2
-    },
-    {
-      "email": "ts@mail.com",
-      "password": "$2a$10$T3R4wDt9.gBlPlVjP5FZoOi3WdXfau1xHDpoz6GC3MSriv66.TXOa",
-      "user_name": "tsv",
-      "confirmPassword": "abramov",
-      "firstname": "abram",
-      "lastname": "abramov",
-      "id": 3
-    },
-    {
-      "email": "test@reg.ru",
-      "password": "$2a$10$ug0UyflsidQCDUKlTjooAuSEHRP5KKoXhm06mt6fhcUoG9ITbny3i",
-      "user_name": "admin",
-      "confirmPassword": "123456",
-      "firstname": "dart",
-      "lastname": "weider",
-      "id": 4
-    },
-    {
       "email": "yoda@jd.ay",
       "password": "$2a$10$bC9QNG3vlg2QME3/bZlbvO/l4S.Cb2laGUOY0X4Urlwc4vAXumxHq",
       "user_name": "yoda",
@@ -67,24 +40,14 @@
       "id": 3
     },
     {
-      "shop_name": "Lerua",
-      "user_id": 2,
-      "id": 4
-    },
-    {
-      "shop_name": "Пятерочка",
-      "user_id": 3,
-      "id": 5
-    },
-    {
-      "shop_name": "metro",
-      "user_id": 3,
-      "id": 6
-    },
-    {
       "shop_name": "Magnit",
       "user_id": 1,
       "id": 7
+    },
+    {
+      "shop_name": "Lerua",
+      "user_id": 5,
+      "id": 8
     }
   ],
   "lists": [
@@ -152,13 +115,6 @@
       "id": 9
     },
     {
-      "list_name": "eda",
-      "shop_id": 5,
-      "created_at": "2022-01-25T00:00:00.000Z",
-      "user_id": 3,
-      "id": 10
-    },
-    {
       "list_name": "someList",
       "shop_id": 1,
       "created_at": "2022-01-29T00:00:00.000Z",
@@ -178,6 +134,27 @@
       "created_at": "2022-01-31T00:00:00.000Z",
       "user_id": 1,
       "id": 13
+    },
+    {
+      "list_name": "list02022022",
+      "shop_id": 7,
+      "created_at": "2022-02-03T00:00:00.000Z",
+      "user_id": 1,
+      "id": 14
+    },
+    {
+      "list_name": "посевная",
+      "shop_id": 3,
+      "created_at": "2022-02-07T00:00:00.000Z",
+      "user_id": 1,
+      "id": 15
+    },
+    {
+      "list_name": "пол",
+      "shop_id": 8,
+      "created_at": "2022-02-11T00:00:00.000Z",
+      "user_id": 5,
+      "id": 16
     }
   ],
   "categories": [
@@ -237,9 +214,14 @@
       "id": 10
     },
     {
-      "category_name": "meat",
-      "user_id": 3,
-      "id": 11
+      "category_name": "семена",
+      "user_id": 1,
+      "id": 12
+    },
+    {
+      "category_name": "ламинат",
+      "user_id": 5,
+      "id": 13
     }
   ],
   "products": [
@@ -340,12 +322,6 @@
       "id": 17
     },
     {
-      "product_name": "meat cow",
-      "category_id": 11,
-      "user_id": 3,
-      "id": 18
-    },
-    {
       "product_name": "одеяло",
       "category_id": 2,
       "user_id": 1,
@@ -374,6 +350,66 @@
       "category_id": 3,
       "user_id": 1,
       "id": 23
+    },
+    {
+      "product_name": "apple",
+      "category_id": 3,
+      "user_id": 1,
+      "id": 24
+    },
+    {
+      "product_name": "картошка",
+      "category_id": 4,
+      "user_id": 1,
+      "id": 25
+    },
+    {
+      "product_name": "meat",
+      "category_id": 8,
+      "user_id": 1,
+      "id": 26
+    },
+    {
+      "product_name": "vodka",
+      "category_id": 9,
+      "user_id": 1,
+      "id": 27
+    },
+    {
+      "product_name": "огурцы",
+      "category_id": 12,
+      "user_id": 1,
+      "id": 28
+    },
+    {
+      "product_name": "кабачок",
+      "category_id": 12,
+      "user_id": 1,
+      "id": 29
+    },
+    {
+      "product_name": "onion",
+      "category_id": 12,
+      "user_id": 1,
+      "id": 30
+    },
+    {
+      "product_name": "подложка",
+      "category_id": 13,
+      "user_id": 5,
+      "id": 31
+    },
+    {
+      "product_name": "ламинат 8мм",
+      "category_id": 13,
+      "user_id": 5,
+      "id": 32
+    },
+    {
+      "product_name": "плинтус",
+      "category_id": 13,
+      "user_id": 5,
+      "id": 33
     }
   ],
   "orders": [
@@ -436,7 +472,7 @@
       "shop_id": 1,
       "day": "2022-01-17T00:00:00.000Z",
       "order_id": 1,
-      "is_success": false,
+      "is_success": true,
       "user_id": 1,
       "list_id": 1,
       "id": 5
@@ -453,19 +489,6 @@
       "user_id": 1,
       "list_id": 4,
       "id": 6
-    },
-    {
-      "product_name": "meat cow",
-      "category_id": 11,
-      "category_name": "meat",
-      "shop_name": "Пятерочка",
-      "shop_id": 5,
-      "day": "2022-01-25T00:00:00.000Z",
-      "order_id": 5,
-      "is_success": false,
-      "user_id": 3,
-      "list_id": 10,
-      "id": 7
     },
     {
       "product_name": "одеяло",
@@ -526,6 +549,127 @@
       "is_success": false,
       "user_id": 1,
       "id": 12
+    },
+    {
+      "product_name": "apple",
+      "category_id": 3,
+      "shop_name": "Magnit",
+      "shop_id": 7,
+      "day": "2022-02-03T00:00:00.000Z",
+      "order_id": 7,
+      "is_success": true,
+      "user_id": 1,
+      "list_id": 14,
+      "id": 13
+    },
+    {
+      "product_name": "картошка",
+      "category_id": 4,
+      "shop_name": "Magnit",
+      "shop_id": "7",
+      "day": "2022-02-03T00:00:00.000Z",
+      "order_id": "7",
+      "is_success": true,
+      "user_id": 1,
+      "id": 14
+    },
+    {
+      "product_name": "meat",
+      "category_id": 8,
+      "category_name": "picnik",
+      "shop_name": "Magnit",
+      "shop_id": "7",
+      "day": "2022-02-03T00:00:00.000Z",
+      "order_id": "7",
+      "is_success": true,
+      "user_id": 1,
+      "id": 15
+    },
+    {
+      "product_name": "vodka",
+      "category_id": 9,
+      "shop_name": "Magnit",
+      "shop_id": "7",
+      "day": "2022-02-03T00:00:00.000Z",
+      "order_id": "7",
+      "is_success": true,
+      "user_id": 1,
+      "id": 16
+    },
+    {
+      "product_name": "огурцы",
+      "category_id": 12,
+      "category_name": "семена",
+      "shop_name": "OBI",
+      "shop_id": 3,
+      "day": "2022-02-07T00:00:00.000Z",
+      "order_id": 3,
+      "is_success": true,
+      "user_id": 1,
+      "list_id": 15,
+      "id": 17
+    },
+    {
+      "product_name": "кабачок",
+      "category_id": 12,
+      "category_name": "семена",
+      "shop_name": "OBI",
+      "shop_id": "3",
+      "day": "2022-02-07T00:00:00.000Z",
+      "order_id": "3",
+      "is_success": true,
+      "user_id": 1,
+      "id": 18
+    },
+    {
+      "product_name": "onion",
+      "category_id": 12,
+      "category_name": "семена",
+      "shop_name": "OBI",
+      "shop_id": 3,
+      "day": "2022-02-07T00:00:00.000Z",
+      "order_id": 3,
+      "is_success": false,
+      "user_id": 1,
+      "list_id": 15,
+      "id": 19
+    },
+    {
+      "product_name": "подложка",
+      "category_id": 13,
+      "category_name": "ламинат",
+      "shop_name": "Lerua",
+      "shop_id": 8,
+      "day": "2022-02-11T00:00:00.000Z",
+      "order_id": 8,
+      "is_success": false,
+      "user_id": 5,
+      "list_id": 16,
+      "id": 20
+    },
+    {
+      "product_name": "ламинат 8мм",
+      "category_id": 13,
+      "category_name": "ламинат",
+      "shop_name": "Lerua",
+      "shop_id": "8",
+      "day": "2022-02-11T00:00:00.000Z",
+      "order_id": "8",
+      "is_success": false,
+      "user_id": 5,
+      "id": 21
+    },
+    {
+      "product_name": "плинтус",
+      "category_id": 13,
+      "category_name": "ламинат",
+      "shop_name": "Lerua",
+      "shop_id": "8",
+      "day": "2022-02-11T00:00:00.000Z",
+      "order_id": "8",
+      "is_success": false,
+      "user_id": 5,
+      "id": 22
     }
   ]
 }

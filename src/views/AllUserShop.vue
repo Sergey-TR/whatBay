@@ -20,20 +20,25 @@
     </div>
     <div>
       <h5 class="h5">все мои списки</h5>
-      <ShopListItem
+      <div v-if="Object.keys(dataUserAllShops).length" class="mt-4">
+        <ShopListItem
               v-for="(shop, idx) in dataUserAllShops"
               :idx = "idx"
               :shop_data = "shop"
               :key="idx"
           >
           </ShopListItem>
+      </div>
+      <div v-else class="mt-4 flex-center">
+        <p>У вас нет списков</p>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import ShopListItem from "../components/shop/ShopListItem"
-import { mapGetters } from "vuex";
+import { mapActions, mapGetters } from "vuex";
 import userData from "../components/composables/userData"
 
 export default {
@@ -60,7 +65,17 @@ export default {
     }
   },
 
-  methods: {} 
+  methods: {
+    ...mapActions(['getListFromUserId', 'getShopFromUserId'])
+  },
+
+  mounted() {
+    const user_id = {
+      id: localStorage.getItem('saveUserId')
+    }
+    this.getListFromUserId(user_id)
+    this.getShopFromUserId(user_id)
+  }
 };
 </script>
 

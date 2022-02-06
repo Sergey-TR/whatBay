@@ -44,8 +44,10 @@
           ></b-form-datepicker>
         </div>
         <div class="selectDate flex-center">
-          <button class="button btn-main" @click="closeDropMenu">ПРИМЕНИТЬ</button>
-        </div> 
+          <button class="button btn-main" @click="closeDropMenu">
+            ПРИМЕНИТЬ
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -66,10 +68,6 @@ export default {
     closeDropMenu() {
       this.$emit("closeModalSetPeriod", this.minDay, this.maxDay);
     },
-
-    // closeAndApply() {
-    //   this.$emit()
-    // }
   },
 };
 </script>
@@ -82,7 +80,7 @@ export default {
   font-size: 32px;
 }
 .selectDate {
-    margin-top: 30px;
+  margin-top: 30px;
 }
 .flex-center {
   display: flex;
